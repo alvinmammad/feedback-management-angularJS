@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "angularjs-toaster": "^3.0.0",
+    "ngstorage": "^0.3.11"
+  }
+}

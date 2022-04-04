@@ -1,0 +1,107 @@
+<div class="post d-flex flex-column-fluid" id="kt_post" >
+
+    <div id="kt_content_container" class="container-xxl">
+
+        <div class="card">
+
+            <div class="card-header border-0 pt-6">
+
+                <div class="card-title">
+
+                    <h2>Təklif və şikayətlər</h2>
+                    <!-- <div class="menu-item px-3">
+                        <a href="#/feedbackdetail/5" data-kt-subscriptions-table-filter="delete_row" class="menu-link px-3">Detallı</a>
+                    </div> -->
+                </div>
+
+            </div>
+
+            <div class="card-body pt-0">
+
+                <table class="table align-middle table-row-dashed fs-6 gy-5"
+                    id="kt_subscriptions_table secretary-table">
+                    <thead>
+                        <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+                            <th class="min-w-50px">ID</th>
+                            <th class="min-w-125px">Ad soyad</th>
+                            <th class="min-w-125px">E-poçt</th>
+                            <th class="min-w-125px">KATEQORİYA</th>
+                            <th class="min-w-125px">Status</th>
+                            <th class="min-w-125px">TARİX</th>
+                            <th class="text-end min-w-70px">FUNKSİYALAR</th>
+                        </tr>
+                    </thead>
+
+
+
+                    <tbody class="text-gray-600 fw-bold" data-ng-repeat="feedback in feedbacks">
+                        <div ng-if="feedbacks.length==0">
+                            <h3 class="text-center">Hal-hazırda feedback yoxdur</h3>
+                        </div>
+
+                        <tr>
+                            <td style="font-weight:bold;" class="text-gray-800 text-hover-primary mb-1">{{ feedback.id
+                                }}</td>
+                            <td class="text-gray-800 text-hover-primary mb-1">
+                                {{ feedback.customerName + " " + feedback.customerSurname}}
+                            </td>
+                            <td class="text-gray-800 text-hover-primary mb-1">{{ feedback.customerEmail }}</td>
+
+                            <td class="text-gray-800 text-hover-primary mb-1">{{ feedback.feedbackCategory.categoryName
+                                }}</td>
+
+                            <td>
+                                <div ng-style="{color:{{getFeedbackStatusDetails(feedback.feedbackStatus).textColor}}}"
+                                    class="badge badge-lg {{getFeedbackStatusDetails(feedback.feedbackStatus).badgeColor}} y-800 text-hover-primary mb-1">{{getFeedbackStatusDetails(feedback.feedbackStatus).feedbackStatus}}</div>
+                            </td>
+                            <td class="text-gray-800 text-hover-primary mb-1">{{ feedback.createdDate | date: 'MMM dd
+                                yyyy, HH:mm' }}</td>
+
+                            <td class="text-end">
+
+                                <div class="dropdown">
+                                    <a class="btn btn-light btn-active-light-primary btn-sm show menu-dropdown"
+                                        type="button" data-toggle="dropdown">Seç
+
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-3 "
+                                        aria-labelledby="dropdown">
+                                        <div class="menu-item px-3">
+                                            <a href="#/feedbackdetail/{{feedback.id}}"
+                                                data-kt-subscriptions-table-filter="delete_row"
+                                                class="menu-link px-3">Detallı</a>
+                                        </div>
+                                        <div class="menu-item px-3">
+                                            <a href="/account/hrfeedbackdetails/@feedback.ID"
+                                                data-kt-subscriptions-table-filter="delete_row"
+                                                class="menu-link px-3">Sil</a>
+                                        </div>
+                                        <div ng-if="feedback.feedbackStatus==0" class="menu-item px-3">
+                                            <a href="/account/sendtohr/@feedback.ID"
+                                                data-kt-subscriptions-table-filter="delete_row"
+                                                class="menu-link px-3">HR-a göndər</a>
+                                        </div>
+                                        <div ng-if="feedback.feedbackStatus==3" class="menu-item px-3">
+                                            <a href="/account/checkfeedbacknote/@feedback.ID"
+                                                data-kt-subscriptions-table-filter="delete_row"
+                                                class="menu-link px-3">Yoxla</a>
+                                        </div>
+                                        <!-- <li><a href="#">HTML</a></li>
+                                                  <li><a href="#">CSS</a></li>
+                                                  <li><a href="#">JavaScript</a></li> -->
+                                    </div>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

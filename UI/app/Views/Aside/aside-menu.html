@@ -1,0 +1,73 @@
+<div class="aside-menu flex-column-fluid">
+
+    <div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true"
+        data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto"
+        data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer"
+        data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
+
+        <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+            id="#kt_aside_menu" data-kt-menu="true">
+            <div class="menu-item">
+                <div class="menu-content pb-2">
+                    <span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+                </div>
+            </div>
+            <!--@if (User.IsInRole("Admin") || User.IsInRole("Secretary"))
+            {-->
+            <div class="menu-item">
+                <a class="menu-link active" href="#/feedbacklist">
+
+                    <span class="menu-title">Feedbacklər</span>
+                </a>
+            </div>
+            <!--}
+            @if (User.IsInRole("Admin"))
+            {-->
+            <div class="menu-item">
+                <a class="menu-link" href="/account/rolelist">
+
+                    <span class="menu-title">Vəzifələr</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a class="menu-link" href="/account/departmentlist">
+
+                    <span class="menu-title">Şöbələr</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a class="menu-link" href="/account/categorylist">
+
+                    <span class="menu-title">Kateqoriyalar</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a class="menu-link" href="/account/userlist">
+
+                    <span class="menu-title">İstifadəçilər</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a class="menu-link" href="/account/register">
+
+                    <span class="menu-title">İstifadəçi yarat</span>
+                </a>
+            </div>
+
+            <!--}
+            @if (User.IsInRole("Admin") || User.IsInRole("HR"))
+            {-->
+            <div class="menu-item">
+                <a class="menu-link" href="">
+
+                    <span class="menu-title">HR feedbackləri</span>
+                </a>
+            </div>
+            <!--}-->
+
+
+        </div>
+
+    </div>
+
+</div>
